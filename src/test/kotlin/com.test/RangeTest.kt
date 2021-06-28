@@ -20,52 +20,64 @@ class RangeTest {
             range = Range(3, 7)
         }
 
-        @Test
-        @DisplayName("下端点は３")
-        fun lower(): Unit {
-            assertEquals(3, range.lower)
+        @Nested
+        @DisplayName("整数閉区間は下端点と上端点を持つ")
+        inner class lowerAndUpper() {
+            @Test
+            @DisplayName("下端点は３")
+            fun lower(): Unit {
+                assertEquals(3, range.lower)
+            }
+
+            @Test
+            @DisplayName("上端点は７")
+            fun upper(): Unit {
+                assertEquals(7, range.upper)
+            }
         }
 
-        @Test
-        @DisplayName("上端点は７")
-        fun upper(): Unit {
-            assertEquals(7, range.upper)
+        @Nested
+        @DisplayName("整数閉区間の文字列表記を返せる")
+        inner class notation() {
+            @Test
+            @DisplayName("文字列表記は[3,7]")
+            fun notation3to7(): Unit {
+                assertEquals("[3,7]", range.notation())
+            }
         }
 
-        @Test
-        @DisplayName("文字列表記は[3,7]")
-        fun notation(): Unit {
-            assertEquals("[3,7]", range.notation())
-        }
+        @Nested
+        @DisplayName("整数閉区間は指定した整数を含むかどうかを判定できる")
+        inner class includes() {
+            @Test
+            @DisplayName("５を含む")
+            fun includes5(): Unit {
+                assertTrue(range.includes(5))
+            }
 
-        @Test
-        @DisplayName("５を含む")
-        fun includes5(): Unit {
-            assertTrue(range.includes(5))
-        }
+            @Test
+            @DisplayName("２を含まない")
+            fun notIncludes2(): Unit {
+                assertFalse(range.includes(2))
+            }
 
-        @Test
-        @DisplayName("２を含まない")
-        fun notIncludes2(): Unit {
-            assertFalse(range.includes(2))
-        }
+            @Test
+            @DisplayName("９を含まない")
+            fun notIncludes9(): Unit {
+                assertFalse(range.includes(9))
+            }
 
-        @Test
-        @DisplayName("９を含まない")
-        fun notIncludes9(): Unit {
-            assertFalse(range.includes(9))
-        }
+            @Test
+            @DisplayName("下端点を含む")
+            fun includes3(): Unit {
+                assertTrue(range.includes(3))
+            }
 
-        @Test
-        @DisplayName("下端点を含む")
-        fun includes3(): Unit {
-            assertTrue(range.includes(3))
-        }
-
-        @Test
-        @DisplayName("上端点を含む")
-        fun includes7(): Unit {
-            assertTrue(range.includes(7))
+            @Test
+            @DisplayName("上端点を含む")
+            fun includes7(): Unit {
+                assertTrue(range.includes(7))
+            }
         }
     }
 }
