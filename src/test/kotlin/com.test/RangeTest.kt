@@ -1,11 +1,12 @@
 package com.test
 
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class RangeTest {
     @Test
     fun lowerAndUpper(): Unit {
-        assertTrue(true)
+        val range: Range = Range(3)
+        assertEquals(3, range.lower)
     }
 }
