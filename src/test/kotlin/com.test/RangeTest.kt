@@ -28,4 +28,16 @@ class RangeTest {
         assertFalse(range.includes(2))
         assertFalse(range.includes(9))
     }
+
+    @Test
+    fun includes3(): Unit {
+        val range: Range = Range(3, 7)
+        assertTrue(range.includes(3))
+    }
+
+    @Test
+    fun includes7(): Unit {
+        val range: Range = Range(3, 7)
+        assertTrue(range.includes(7))
+    }
 }
