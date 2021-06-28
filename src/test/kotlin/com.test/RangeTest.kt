@@ -8,10 +8,12 @@ import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
+@DisplayName("閉区間を表現するdata class")
 class RangeTest {
     private lateinit var range: Range
 
     @Nested
+    @DisplayName("整数閉区間が３から７の場合")
     inner class lower3upper7 {
         @BeforeEach
         fun setUp(): Unit {
