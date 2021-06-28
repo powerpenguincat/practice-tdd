@@ -1,6 +1,8 @@
 package com.test
 
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertFalse
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
 class RangeTest {
@@ -17,5 +19,13 @@ class RangeTest {
         assertEquals("[3,7]", range.notation())
         range = Range(2, 8)
         assertEquals("[2,8]", range.notation())
+    }
+
+    @Test
+    fun includes(): Unit {
+        val range: Range = Range(3, 7)
+        assertTrue(range.includes(5))
+        assertFalse(range.includes(2))
+        assertFalse(range.includes(9))
     }
 }
