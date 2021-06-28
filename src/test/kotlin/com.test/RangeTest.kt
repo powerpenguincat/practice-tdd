@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test
 
 class RangeTest {
     @Test
-    fun hoge(): Unit {
+    fun lowerAndUpper(): Unit {
         assertTrue(true)
     }
 }
