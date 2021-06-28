@@ -37,7 +37,7 @@ class RangeTest {
         }
 
         @Nested
-        @DisplayName("整数閉区間の文字列表記を返せる")
+        @DisplayName("整数閉区間の文字列表記を返す")
         inner class notation() {
             @Test
             @DisplayName("文字列表記は[3,7]")
@@ -68,13 +68,13 @@ class RangeTest {
             }
 
             @Test
-            @DisplayName("下端点を含む")
+            @DisplayName("下端点３を含む")
             fun includes3(): Unit {
                 assertTrue(range.includes(3))
             }
 
             @Test
-            @DisplayName("上端点を含む")
+            @DisplayName("上端点７を含む")
             fun includes7(): Unit {
                 assertTrue(range.includes(7))
             }
