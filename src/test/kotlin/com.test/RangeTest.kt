@@ -22,7 +22,7 @@ class RangeTest {
 
         @Nested
         @DisplayName("整数閉区間は下端点と上端点を持つ")
-        inner class lowerAndUpper() {
+        inner class LowerAndUpper() {
             @Test
             @DisplayName("下端点は３")
             fun lower(): Unit {
@@ -38,7 +38,7 @@ class RangeTest {
 
         @Nested
         @DisplayName("整数閉区間の文字列表記を返す")
-        inner class notation() {
+        inner class Notation() {
             @Test
             @DisplayName("文字列表記は[3,7]")
             fun notation3to7(): Unit {
@@ -48,7 +48,7 @@ class RangeTest {
 
         @Nested
         @DisplayName("整数閉区間は指定した整数を含むかどうかを判定できる")
-        inner class includes() {
+        inner class Includes() {
             @Test
             @DisplayName("５を含む")
             fun includes5(): Unit {
